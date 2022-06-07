@@ -12,7 +12,7 @@ OPTICA:
 Nivel 1, Ejercicio 1
 Diagrama, estructura, datos y consultas.
 
-PIZZERÍA:
+PIZZERIA:
 Nivel 1, Ejercicio 2
 Diagrama, estructura, datos y consultas.
 
