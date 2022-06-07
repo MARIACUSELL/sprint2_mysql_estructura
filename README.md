@@ -1,5 +1,5 @@
 ## sprint2_mysql_estructura
-Learning MySQL
+**Learning MySQL**
 
 Repositorio creado para incluir todos los ejercicios de MySQL del sprint2 de NodeJS.
 
