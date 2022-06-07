@@ -6,7 +6,7 @@ Repositorio creado para incluir todos los ejercicios de MySQL del sprint2 de Nod
 Cada carpeta corresponde a un ejercicio, que incluye diagrama de la base de datos, creación de base de datos, inserción de datos y queries correspondientes si se piden.
 Cada carpeta incluye 2 archivos, uno con el diagrama y el archivo sql con el resto.
 
-Los scripts de crwación de la base de datos elimina previamente cualquier base de datos anterior con el mismo nombre.
+Los scripts de creación de la base de datos elimina previamente cualquier base de datos anterior con el mismo nombre.
 
 OPTICA:
 Nivel 1, Ejercicio 1
