@@ -8,14 +8,18 @@ Cada carpeta incluye 2 archivos, uno con el diagrama y el archivo sql con el res
 
 Los scripts de creación de BD eliminan previamente cualquier BD que se llame igual.
 
-OPTICA - Nivel 1, Ejercicio 1
+OPTICA:
+Nivel 1, Ejercicio 1
 Diagrama, estructura, datos y consultas.
 
-PIZZERÍA - Nivel 1, Ejercicio 2
+PIZZERÍA:
+Nivel 1, Ejercicio 2
 Diagrama, estructura, datos y consultas.
 
-YOUTUBE -  Nivel 2, Ejercicio 1
+YOUTUBE:
+Nivel 2, Ejercicio 1
 Diagrama, estructura y datos.
 
-SPOTIFY - Nivel 3 Ejercicio 1
+SPOTIFY:
+Nivel 3 Ejercicio 1
 Diagrama y estructura.
