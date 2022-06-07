@@ -8,18 +8,18 @@ Cada carpeta incluye 2 archivos, uno con el diagrama y el archivo sql con el res
 
 Los scripts de creación de la base de datos elimina previamente cualquier base de datos anterior con el mismo nombre.
 
-**OPTICA:**
+**- OPTICA:**
 Nivel 1, Ejercicio 1
 *Diagrama, estructura, datos y consultas*
 
-**PIZZERIA:**
+**- PIZZERIA:**
 Nivel 1, Ejercicio 2
 *Diagrama, estructura, datos y consultas*
 
-**YOUTUBE:**
+**- YOUTUBE:**
 *Nivel 2, Ejercicio 1
 Diagrama, estructura y datos*
 
-**SPOTIFY:**
+**- SPOTIFY:**
 *Nivel 3 Ejercicio 1
 Diagrama y estructura*
