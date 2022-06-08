@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS `cul-ampolla` ;
+DROP DATABASE IF EXISTS CULAMPOLLA;
 
-CREATE DATABASE `cul-ampolla` DEFAULT CHARACTER SET utf8mb4 ;
+CREATE DATABASE CULAMPOLLA CHARACTER SET utf8mb4 ;
 
-USE `cul-ampolla` ;
+USE CULAMPOLLA ;
 
 CREATE TABLE suppliers (
     supplierId INT(6) NOT NULL AUTO_INCREMENT,
@@ -48,7 +48,7 @@ CREATE TABLE glasses (
     PRIMARY KEY(glassId),
     FOREIGN KEY (supplierId) REFERENCES suppliers(supplierId),
     FOREIGN KEY (clientId) REFERENCES clients(clientId),
-    FOREIGN KEY (employeeId) REFERENCES employees(employeeId),
+    FOREIGN KEY (employeeId) REFERENCES employees(employeeId)
 );
 
 CREATE TABLE addresses (
@@ -64,7 +64,7 @@ CREATE TABLE addresses (
     country VARCHAR(20),
     PRIMARY KEY(addressId),
     FOREIGN KEY(supplierId) REFERENCES suppliers(supplierId),
-    FOREIGN KEY(clientId) REFERENCES clients(clientId),
+    FOREIGN KEY(clientId) REFERENCES clients(clientId)
 );
 
 -- INSERT DATA
@@ -103,14 +103,14 @@ VALUES
         'Maria Cusell',
         '+34 616 620 419',
         'maria@gmail.com',
-        '2021 -09 -12',
+        '2021-09-12',
         NULL
     ),
     (
         'Enric Mayne',
         '+34 663 776 554',
         'enric@gmail.com',
-        '2020 -01 -22',
+        '2020-01-22',
         1
     );
 
@@ -137,8 +137,7 @@ INSERT INTO
         glassColorLens,
         glassPrice,
         glassSellingDate
-    );
-
+    )
 VALUES
     (
         2,
@@ -151,7 +150,7 @@ VALUES
         'blue',
         'grey',
         99.57,
-        '2022-12-22',
+        '2022-12-22'
     ),
     (
         1,
@@ -181,7 +180,7 @@ VALUES
     );
 
 INSERT INTO
-    adresses(
+    addresses(
         supplierId,
         clientId,
         street,
@@ -191,8 +190,7 @@ INSERT INTO
         city,
         postalCode,
         country
-    );
-
+    )
 VALUES
     (
         1,
@@ -235,6 +233,7 @@ VALUES
         '4',
         '2',
         'Barcelona',
+        '08390',
         'Spain'
     );
 
@@ -243,11 +242,10 @@ VALUES
 -- Dades dels proveidors de cada una de les ulleres
 
 SELECT
-    glassId,
-    supplierId
+    *
 FROM
     glasses
-    INNER JOIN adresses ON glasses.supplierId = adresses.supplierId;
+    INNER JOIN addresses ON glasses.supplierId = addresses.supplierId;
 
 -- Dedes de tots els proveidors
 
@@ -255,16 +253,14 @@ SELECT
     *
 FROM
     suppliers
-    INNER JOIN adresses ON suppliers.suppliersId = adresses.supliersId;
+    INNER JOIN addresses ON suppliers.supplierId = addresses.supplierId;
 
 -- Cada ullera quin empleat l'ha venut i quan
 
 SELECT
-    glassId,
-    employeeId,
-    glassSellingDate,
+    *
 FROM
     glasses
+    INNER JOIN employees ON glasses.employeeId = employees.employeeId
 WHERE
-    glassSellingDate IS NOT NULL
-    INNER JOIN employees ON glasses.employeeId = employees.employeeId;
+    glassSellingDate IS NOT NULL;
