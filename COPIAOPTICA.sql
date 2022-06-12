@@ -4,6 +4,8 @@ CREATE DATABASE CULAMPOLLA CHARACTER SET utf8mb4 ;
 
 USE CULAMPOLLA ;
 
+-- CREACIÓ TAULES
+
 CREATE TABLE suppliers (
     supplierId INT(6) NOT NULL AUTO_INCREMENT,
     supplierName VARCHAR(25) NOT NULL,
@@ -103,14 +105,14 @@ VALUES
         'Maria Cusell',
         '+34 616 620 419',
         'maria@gmail.com',
-        '2021-09-12',
+        '2010-09-12',
         NULL
     ),
     (
         'Enric Mayne',
         '+34 663 776 554',
         'enric@gmail.com',
-        '2020-01-22',
+        '2011-01-22',
         1
     );
 
@@ -150,7 +152,7 @@ VALUES
         'blue',
         'grey',
         99.57,
-        '2022-12-22'
+        '2021-12-22'
     ),
     (
         1,
@@ -163,7 +165,7 @@ VALUES
         'red',
         'grey',
         55.23,
-        '2022-12-12'
+        '2021-12-12'
     ),
     (
         1,
@@ -176,7 +178,7 @@ VALUES
         'green',
         'grey',
         75.50,
-        '2022-11-23'
+        '2021-11-23'
     );
 
 INSERT INTO
@@ -237,30 +239,47 @@ VALUES
         'Spain'
     );
 
--- Queries
+-- QUERIES
 
--- Dades dels proveidors de cada una de les ulleres
+-- Qui ha sigut l’empleat que ha venut cada ullera i quan.
 
 SELECT
-    *
+    employeeName,
+    glassSellingDate,
+    glassBrand
 FROM
-    glasses
-    INNER JOIN addresses ON glasses.supplierId = addresses.supplierId;
+    employees
+    INNER JOIN glasses ON employees.employeeId = glasses.employeeId;
 
--- Dedes de tots els proveidors
+-- Total compres d'un client.
 
 SELECT
-    *
+    clientName
+FROM
+    clients
+    INNER JOIN glasses ON clients.clientId = glasses.clientId
+GROUP BY
+    clients.clientId;
+
+-- Llista les diferents ulleres que ha venut un empleat durant un any.
+
+SELECT
+    employeeName,
+    glassBrand,
+    glassSellingDate
+FROM
+    employees
+    INNER JOIN glasses ON (
+        employees.employeeId = glasses.employeeId
+        AND glassSellingDate LIKE '2021%'
+    );
+
+-- Llista els diferents proveïdors que han subministrat ulleres venudes amb èxit a la optica.
+
+SELECT
+    supplierName,
+    glassBrand,
+    glassSellingDate
 FROM
     suppliers
-    INNER JOIN addresses ON suppliers.supplierId = addresses.supplierId;
-
--- Cada ullera quin empleat l'ha venut i quan
-
-SELECT
-    *
-FROM
-    glasses
-    INNER JOIN employees ON glasses.employeeId = employees.employeeId
-WHERE
-    glassSellingDate IS NOT NULL;
+    INNER JOIN glasses ON suppliers.supplierId = glasses.supplierId;
